@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="RTL Markdown">
+  <rect width="64" height="64" rx="15" fill="#2f6fdb"/>
+  <!-- right-aligned lines: a heading and two lines of RTL text -->
+  <rect x="20" y="15" width="30" height="8" rx="4" fill="#fff"/>
+  <rect x="12" y="29" width="38" height="5" rx="2.5" fill="#fff" fill-opacity=".85"/>
+  <rect x="26" y="40" width="24" height="5" rx="2.5" fill="#fff" fill-opacity=".6"/>
+</svg>
