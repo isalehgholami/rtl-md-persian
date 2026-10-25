@@ -1,47 +1,45 @@
-<div align="center">
-
 # ویرایشگر مارک‌داون راست‌به‌چپ
 
-**RTL Markdown Editor** — a small, fast Markdown editor built for Persian, Arabic and Hebrew.
+مارک‌داون برای متن چپ‌به‌راست ساخته شده. وقتی فارسی توش می‌نویسی، لیست‌ها می‌چسبند به چپ، نقل‌قول‌ها خط کنار را سمت اشتباه می‌گذارند و جدول‌ها هم بیشتر وقت‌ها بیرون از صفحه می‌زنند. این ویرایشگر برای همین نوشته شده: یک صفحه‌ی ساده که فارسی را همان‌طور که باید رندر می‌کند.
 
-[Live demo](https://isalehgholami.github.io/rtl-md-persian/) · [Report a bug](https://github.com/isalehgholami/rtl-md-persian/issues)
+**[isalehgholami.github.io/rtl-md-persian](https://isalehgholami.github.io/rtl-md-persian)**
 
-</div>
+![ویرایشگر در پوسته‌ی روشن](docs/screenshot-light.png)
 
-## Features
+![ویرایشگر در پوسته‌ی تیره](docs/screenshot-dark.png)
 
-- Live preview, side by side on desktop and stacked on mobile
-- **Full-screen render** mode (with browser fullscreen)
-- Correct RTL typography with [Vazirmatn](https://github.com/rastikerdar/vazirmatn); code blocks stay LTR
-- Responsive tables that scroll inside their own container
-- RTL / LTR toggle, light / dark theme, one-click HTML copy
-- Autosaves to `localStorage`; no backend, no tracking
+## چه کارهایی می‌کند
 
-## Run locally
+- پیش‌نمایش زنده، کنار متن در دسکتاپ و زیر آن در موبایل
+- دکمه‌ی **رندر** که خروجی را تمام‌صفحه نشان می‌دهد (با Esc بسته می‌شود)
+- فونت [وزیرمتن](https://github.com/rastikerdar/vazirmatn). کد همیشه چپ‌به‌راست می‌ماند.
+- جدول‌هایی که در عرض کم، داخل خودشان اسکرول می‌خورند و صفحه را به هم نمی‌ریزند
+- تغییر جهت RTL/LTR، پوسته‌ی روشن و تیره و کپی خروجی HTML
+- متن خودکار در مرورگر ذخیره می‌شود. بک‌اند و ردیابی ندارد.
 
-It is a static site, so any file server works:
+## اجرا روی کامپیوتر خودت
+
+سایت استاتیک است و هر سرور فایلی کار می‌کند:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open <http://localhost:8000>.
+بعد `http://localhost:8000` را باز کن.
 
-## Deploy to GitHub Pages
+## چند نکته
 
-1. Push to the `main` branch.
-2. In the repository go to **Settings → Pages** and set **Source** to **GitHub Actions**.
-3. The workflow in [`.github/workflows/pages.yml`](.github/workflows/pages.yml) publishes the site on every push.
+- اگر وسط یک سلول جدول به `|` نیاز داری، آن را به شکل `\|` بنویس یا داخل بک‌تیک بگذار. وگرنه یک ستون جدید ساخته می‌شود.
+- فونت از CDN جیدلیور لود می‌شود. برای کار کاملاً آفلاین، فایل‌های وزیرمتن را کنار پروژه بگذار و `index.html` را به آن‌ها وصل کن.
 
-## Notes
+## مشارکت
 
-- Tables: escape a literal pipe inside a cell as `\|` (or put it in backticks), otherwise it starts a new column.
-- The font is loaded from the jsDelivr CDN. To work fully offline, copy the Vazirmatn font files into the repo and point `index.html` at them.
+ایراد دیدی یا ایده‌ای داری؟ یک Issue یا Pull Request باز کن، خوشحال می‌شوم.
 
-## Credits
+## سازنده
 
-Developed by [@iSalehGholami](https://github.com/iSalehGholami). Inspired by [dariubs/rtlmd](https://github.com/dariubs/rtlmd). Markdown parsing by [marked](https://github.com/markedjs/marked).
+[@iSalehGholami](https://github.com/iSalehGholami). الهام‌گرفته از [dariubs/rtlmd](https://github.com/dariubs/rtlmd). پارس مارک‌داون با [marked](https://github.com/markedjs/marked).
 
-## License
+## لایسنس
 
 [MIT](license)
