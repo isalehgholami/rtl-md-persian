@@ -32,6 +32,11 @@
 		</div>
 
 		<div class="actions">
+			<input id="file-input" type="file" accept=".md,.markdown,.mdown,.txt,text/markdown,text/plain" hidden>
+			<button id="btn-open" class="btn" type="button" title="بارگذاری فایل مارک‌داون (یا فایل را روی نوشتار رها کنید)">
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+				<span class="hide-sm">بارگذاری فایل</span>
+			</button>
 			<button id="btn-dir" class="btn" type="button" title="تغییر جهت متن">
 				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4a4 4 0 0 0 0 8v8M13 4v16M9 4h8M17 4v16" /></svg>
 				<span id="dir-label">RTL</span>
@@ -58,7 +63,14 @@
 		</section>
 
 		<section class="pane pane-preview" aria-label="پیش‌نمایش">
-			<div class="pane-head"><span>پیش‌نمایش زنده</span></div>
+			<div class="pane-head">
+				<span>پیش‌نمایش زنده</span>
+				<button id="toc-toggle" class="btn-mini" type="button" aria-expanded="false" aria-controls="toc">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+					<span>فهرست</span>
+				</button>
+			</div>
+			<nav id="toc" class="toc" aria-label="فهرست عناوین" hidden></nav>
 			<article id="output" class="markdown-body"></article>
 		</section>
 	</main>
@@ -70,11 +82,16 @@
 				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
 				<span>بستن</span>
 			</button>
+			<button id="reader-toc-toggle" class="btn" type="button" aria-expanded="false" aria-controls="reader-toc">
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+				<span>فهرست</span>
+			</button>
 			<button id="reader-fs" class="btn" type="button">
 				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
 				<span class="hide-sm">تمام‌صفحه‌ی مرورگر</span>
 			</button>
 		</div>
+		<nav id="reader-toc" class="toc" aria-label="فهرست عناوین" hidden></nav>
 		<div class="reader-scroll">
 			<article id="reader-output" class="markdown-body"></article>
 		</div>
